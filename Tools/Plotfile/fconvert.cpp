@@ -137,7 +137,7 @@ void main_main ()
             mf[ilev] = std::make_unique<MultiFab>(plotfile.get(ilev));
             mf_ptrs[ilev] = mf[ilev].get();
             geom.emplace_back(plotfile.probDomain(ilev), rb,
-                              plotfile.coordSys(), is_per.data());
+                              plotfile.coordSys(), is_per);
             level_steps[ilev] = plotfile.levelStep(ilev);
             if (ilev < finest_level) {
                 ref_ratio[ilev] = plotfile.refRatioVect(ilev);
